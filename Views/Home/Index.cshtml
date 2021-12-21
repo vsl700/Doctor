@@ -4,5 +4,18 @@
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    @if (User.IsInRole(Doctor.Utility.Helper.Admin))
+    {
+        <h5>Here's the link to the <a asp-controller="Appointment" asp-action="Index">Doctor/Patient calendar</a></h5>
+    }
+    else if (User.IsInRole(Doctor.Utility.Helper.Doctor) || User.IsInRole(Doctor.Utility.Helper.Patient))
+    {
+        <p>In the <a asp-controller="Appointment" asp-action="Index">Doctor/Patient calendar</a> you can set your appointments.</p>
+    }
+
+    <br />
+    <p>Doctors' shift:</p>
+    <p>Mon/Wen/Fri: 7:30-18:00</p>
+    <p>Tue/Thu: 11:00-17:00</p>
+    <p>Sat/Sun: Weekends</p>
 </div>

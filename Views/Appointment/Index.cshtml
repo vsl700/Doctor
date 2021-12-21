@@ -5,7 +5,8 @@
         <div class="row">
             <div class="form-group col-4" id="divDoctorList">
                 <label>Select Doctor</label>
-                @Html.DropDownList("doctorId", new SelectList(ViewBag.DoctorList, "Id", "Name"), new {
+                @Html.DropDownList("doctorId", new SelectList(ViewBag.DoctorList, "Id", "Name"), new
+                {
                 @class = "form-control select2",
                 @onchange = "onDoctorChange();"
                 })
@@ -17,5 +18,9 @@
             </div>
         </div>
     }
+    <div class="text-center">
+        To set or change an appointment, just click on a date and set the appointment's Name, Description,
+        Doctor/Patient, Start time and Duration
+    </div>
     <div id="calendar"></div>
 </div>
