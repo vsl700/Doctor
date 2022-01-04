@@ -9,7 +9,7 @@ namespace Doctor.Models
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-
+        public DbSet<Appointment> Appointments { get; set; }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
 
